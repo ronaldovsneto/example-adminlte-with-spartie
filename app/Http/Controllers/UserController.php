@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Traits\Permission;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
 class UserController extends Controller
 {
+    use Permission;
 
     private $config;
 
@@ -15,8 +17,9 @@ class UserController extends Controller
         $permission = 'user';
         $config = [
             'permissions' => [
-                'show'      =>   $permission.'_list',
-                'create'    =>   $permission.'_add',
+                'list'      =>   $permission.'_list',
+                'show'      =>   $permission.'_show',
+                'add'       =>   $permission.'_add',
                 'edit'      =>   $permission.'_edit',
                 'delete'    =>   $permission.'_delete',
             ],
@@ -57,5 +60,9 @@ class UserController extends Controller
         return view($this->config['route'].'.edit',[
             'data' => $this->config['model']::find($id)
         ]);
+    }
+
+    public function teste(){
+        return "hello!";
     }
 }

@@ -45,6 +45,9 @@
         @endif
     @endif
 
+    {{-- Custom style --}}
+    <link rel="stylesheet" href="{{ asset('css/helper.css') }}">
+
     {{-- Custom Stylesheets (post AdminLTE) --}}
     @yield('adminlte_css')
 
@@ -77,6 +80,9 @@
 
     {{-- Body Content --}}
     @yield('body')
+
+    {{-- CUSTOM NOTIFICATIONS - RONALDO NETO --}}
+    @include('_partials.notification')
 
     {{-- Base Scripts --}}
     @if(!config('adminlte.enabled_laravel_mix'))
