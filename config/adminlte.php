@@ -259,16 +259,19 @@ return [
         [
             'text'    => 'Permissions',
             'icon'    => 'fas fa-check-double',
+            'can'     => ['role_list', 'permission_list'],
             'submenu' => [
                 [
                     'text' => 'Roles',
                     'url'  => 'roles',
                     'icon'    => 'fas fa-check',
+                    'can'     => 'role_list',
                 ],
                 [
                     'text' => 'Permissions',
                     'url'  => 'permissions',
                     'icon'    => 'fas fa-check',
+                    'can'     => 'permission_list',
                 ],
             ],
         ],
