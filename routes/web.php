@@ -26,12 +26,12 @@ Route::middleware(['auth'])->group(function(){
     Route::prefix('users')->name('users.')->group(function(){
         Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name('index');
         Route::get('/edit/{id}', [\App\Http\Controllers\UserController::class, 'edit'])->name('edit');
-        Route::get('/teste', [\App\Http\Controllers\UserController::class, 'teste'])->name('teste');
     });
 
     //ROUTE TO ROLES
     Route::prefix('roles')->name('roles.')->group(function(){
         Route::get('/', [\App\Http\Controllers\Permission\RoleController::class, 'index'])->name('index');
+        Route::get('/edit/{id}', [\App\Http\Controllers\RoleController::class, 'edit'])->name('edit');
     });
 
     //ROUTE TO PERMISSIONS
