@@ -61,8 +61,4 @@ class UserController extends Controller
             'data' => $this->config['model']::find($id)
         ]);
     }
-
-    public function teste(){
-        return "hello!";
-    }
 }

@@ -31,7 +31,7 @@ Route::middleware(['auth'])->group(function(){
     //ROUTE TO ROLES
     Route::prefix('roles')->name('roles.')->group(function(){
         Route::get('/', [\App\Http\Controllers\Permission\RoleController::class, 'index'])->name('index');
-        Route::get('/edit/{id}', [\App\Http\Controllers\RoleController::class, 'edit'])->name('edit');
+        Route::get('/edit/{id}', [\App\Http\Controllers\Permission\RoleController::class, 'edit'])->name('edit');
     });
 
     //ROUTE TO PERMISSIONS

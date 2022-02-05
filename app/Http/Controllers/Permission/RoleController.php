@@ -109,9 +109,8 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Role $role)
     {
-        //
     }
 
     /**
@@ -122,7 +121,9 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view($this->config['route'].'.edit',[
+            'data' => Role::findById($id)
+        ]);
     }
 
     /**
